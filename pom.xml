@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.unichain.pom</groupId>
+        <artifactId>unichain-pom</artifactId>
+        <version>0.0.1-SNAPSHOTS</version>
+    </parent>
+
+    <groupId>com.unichain.market</groupId>
+    <artifactId>flow-market</artifactId>
+    <version>1.0.0-SNAPSHOTS</version>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <module>unichain-market</module>
+        <module>unichain-market-admin</module>
+        <module>unichain-market-api</module>
+        <module>unichain-market-base</module>
+        <module>unichain-market-model</module>
+        <module>unichain-market-mq</module>
+        <module>unichain-market-nosql</module>
+    </modules>
+
+    <properties>
+        <user.version>${project.version}</user.version>
+        <unichain-framework.version>1.0.0-SNAPSHOTS</unichain-framework.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.unichain.framework</groupId>
+            <artifactId>unichain-framework</artifactId>
+            <version>${unichain-framework.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!--本项目-->
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>market-biz</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>market-controller</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>market-application</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+
+
+
+            <!--用户Admin-->
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>market-admin-controller</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>market-admin-biz</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+
+            <!--API-->
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>unichain-market-api</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+
+
+            <!--用户基础模块-->
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>market-base-biz</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>market-base-controller</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>market-base-dao</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>market-base-service</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.unichain.user</groupId>
+                <artifactId>unichain-user-pojo</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>market-base-quartz</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+
+            <!--用户模型-->
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>unichain-market-entity</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>unichain-market-pojo</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <!--用户MQ-->
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>unichain-market-mq</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <!--用户Redis-->
+            <dependency>
+                <groupId>com.unichain.market</groupId>
+                <artifactId>unichain-market-nosql</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.unichain.id</groupId>
+                <artifactId>id-generater</artifactId>
+                <version>1.0.0-SNAPSHOTS</version>
+            </dependency>
+            <dependency>
+                <groupId>com.unichain.config</groupId>
+                <artifactId>unichain-config-pojo</artifactId>
+                <version>1.0.0-SNAPSHOTS</version>
+            </dependency>
+            <dependency>
+                <groupId>com.unichain.verify</groupId>
+                <artifactId>verify-sms</artifactId>
+                <version>1.0.0-SNAPSHOTS</version>
+            </dependency>
+            <!--支付-->
+            <dependency>
+                <groupId>com.unichain.pay</groupId>
+                <artifactId>pay-base-model-entity</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.2.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-redis</artifactId>
+                <version>1.4.7.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>1.9.3</version>
+            </dependency>
+
+            <!--<dependency>-->
+            <!--<groupId>com.unichain.pay</groupId>-->
+            <!--<artifactId>pay-base-model</artifactId>-->
+            <!--<version>${user.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--<groupId>org.springframework.data</groupId>-->
+            <!--<artifactId>spring-data-commons</artifactId>-->
+            <!--</dependency>-->
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <!--<plugins>-->
+        <!--<plugin>-->
+        <!--<artifactId>maven-deploy-plugin</artifactId>-->
+        <!--<version>2.5</version>-->
+        <!--</plugin>-->
+        <!--</plugins>-->
+    </build>
+
+
+</project>

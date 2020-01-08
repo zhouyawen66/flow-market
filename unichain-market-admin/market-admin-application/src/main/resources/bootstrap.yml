@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: flow-market-admin
+
+  profiles:
+    active: ${profile:dev}
+
+server:
+  servlet:
+    context-path: /api/market/admin
+
+suixingpay:
+  config:
+    enabled: true                  # 是否启用配置中心，默认值为：true;为了方便开发，建议开发环境设置为false
+    cachePath: /data/config/configcache            # 配置缓存路径，默认值为：./config
+    cacheTimeOut: 0                # 本地缓存过期时间(单位：秒),如果小于等于0时，一直有效
+    failFast: false                # 是否快速失败，如果为true时，当访问配置中心时立即抛异常；如果为false时，会尝试加载3次，并会尝试获取本地缓存，最终还没有配置，才会抛异常。默认值：false
+management:
+  endpoints:
+    web:
+      base-path: /ops
+      exposure:
+        include: '*'
+
+
+
